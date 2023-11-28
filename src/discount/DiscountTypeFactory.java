@@ -1,6 +1,25 @@
 package discount;
 
 public class DiscountTypeFactory {
+    //completely unneccessary implementation of singleton pattern, just to understand it.
+    private static DiscountTypeFactory instance;
+
+    public static DiscountTypeFactory getInstance()
+    {
+        if(instance == null)
+        {
+            synchronized (DiscountTypeFactory.class) {
+                if(instance == null)
+                    instance = new DiscountTypeFactory();
+            }
+        }
+        return instance;
+    }
+
+    private DiscountTypeFactory()
+    {
+
+    }
     public DiscountType make(char discountType)
     {
         return switch (discountType) {

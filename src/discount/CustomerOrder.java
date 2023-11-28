@@ -30,7 +30,7 @@ public class CustomerOrder {
 
     public void setDiscountType(char discountType)
     {
-        this.discountType = new DiscountTypeFactory().make(discountType);
+        this.discountType = DiscountTypeFactory.getInstance().make(discountType);
     }
 
     @Override
